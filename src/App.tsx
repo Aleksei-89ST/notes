@@ -3,7 +3,31 @@ import { Container } from "react-bootstrap";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { NewNote } from "./NewNote";
 
+export type Note = {
+  id: string;
+} & NoteData
+
+export type RawNote = {
+id: string;
+}
+export type RawNoteData = {
+  title: string;
+  markdown:string;
+  tagIds: string[];
+}
+// типы для заметок
+export type NoteData = {
+  title: string;
+  markdown:string;
+  tags:Tag[]
+}
+export type Tag = {
+  id:string;
+  label:string;
+}
+
 function App() {
+
   return (
     <Container className="my-4">
       <Routes>
